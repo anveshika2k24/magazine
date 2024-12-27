@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="img-slider.css">
+    
+      <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .swiper-container {
+      width: 80%;
+      margin: auto;
+      padding: 20px 0;
+    }
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .image-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .text-box {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo1.png" alt="Logo">  DSCS</div>
+        <div class="social-media">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="options">
+        <a href="" class="active">Home</a>
+        <a href="world.html">World</a>
+        <a href="politics.html">Politics</a>
+        <a href="economy.html">Economy</a>
+        <a href="tech.html">Technology</a>
+        <a href="sports.html">Sports</a>
+        <a href="auto.html">Automobiles</a>
+        <a href="edu.html">Education</a>
+        <a href="climate.html">Climate</a>
+        <a href="med.html">Medical</a>
+        <a href="films.html">Films</a>
+        <a href="social.html">Social Media</a>
+    </div>
+
+<div class="container">
+
+        <div class="featured">
+            <div class="featured-title">FEATURED</div>
+    <div class="slider">
+
+        <div class="slides">
+            <!-- Slide 1 -->    
+            <div class="slide">
+                <img src="img-1.jpg" alt="Slide 1">
+                <p>Featured Story 1</p>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="img-2.jpeg" alt="Slide 2">
+                <p>Featured Story 2</p>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="img-3.jpeg" alt="Slide 3">
+                <p>Featured Story 3</p>
+            </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+</div>
+
+            <div class="latest">
+            <div class="section-title">LATEST</div>
+            <div class="slider">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <img src="img-1.jpg" alt="Slide 1">
+                
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="img-2.jpeg" alt="Slide 2">
+
+
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="img-3.jpeg" alt="Slide 3">
+            </div>
+            </div>
+        <!-- Navigation Buttons -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+        </div>
+
+<script type="text/javascript">
+    document.querySelectorAll('.latest').forEach(section => {
+    const slides = section.querySelector('.slides');
+    const tSlider = section.querySelector('.t-slides');
+    const slide = section.querySelectorAll('.slide');
+    const tSlide = section.querySelectorAll('.t-slide');
+    const prev = section.querySelector('.prev');
+    const next = section.querySelector('.next');
+
+    let currentIndex = 0;
+
+
+function showSlide(index) {
+    if (index >= slide.length) currentIndex = 0;
+    if (index < 0) currentIndex = slide.length - 1;
+
+    // Sync image slider
+    slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+
+    // Sync text slider
+    if (tSlider) { // Ensure tSlider exists
+        tSlider.style.transform = `translateX(${-currentIndex * 100}%)`;
+    }
+}
+
+
+    next.addEventListener('click', () => {
+        currentIndex++;
+        showSlide(currentIndex);
+    });
+
+    prev.addEventListener('click', () => {
+        currentIndex--;
+        showSlide(currentIndex);
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+        currentIndex++;
+        showSlide(currentIndex);
+    }, 5000);
+});
+
+</script>
+
+</div>
+
+    <footer>
+        &copy; 2024 DATA SCIENCE. All rights reserved.
+    </footer>
+</body>
+</html>
