@@ -8,39 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="img-slider.css">
+
+
     
-      <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .swiper-container {
-      width: 80%;
-      margin: auto;
-      padding: 20px 0;
-    }
-    .swiper-slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    .image-box img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .text-box {
-      margin-top: 15px;
-      font-size: 18px;
-      color: #555;
-    }
-  </style>
 
 </head>
 <body>
     <header>
-        <div class="logo"><img src="logo.jpg" alt="Logo">  DSCS</div>
+        <div class="logo"><img src="logo1.png" alt="Logo">  DSCS</div>
         <div class="social-media">
             <ul>
                 <li>
@@ -103,7 +78,7 @@
         <!-- Navigation Buttons -->
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
-    </div>
+    </div>    
 </div>
 
             <div class="latest">
@@ -133,31 +108,24 @@
 
         </div>
 
+</div>
+
 <script type="text/javascript">
-    document.querySelectorAll('.latest').forEach(section => {
+    document.querySelectorAll('.slider').forEach(section => {
     const slides = section.querySelector('.slides');
-    const tSlider = section.querySelector('.t-slides');
     const slide = section.querySelectorAll('.slide');
-    const tSlide = section.querySelectorAll('.t-slide');
     const prev = section.querySelector('.prev');
     const next = section.querySelector('.next');
 
     let currentIndex = 0;
 
+    function showSlide(index) {
+        if (index >= slide.length) currentIndex = 0;
+        if (index < 0) currentIndex = slide.length - 1;
 
-function showSlide(index) {
-    if (index >= slide.length) currentIndex = 0;
-    if (index < 0) currentIndex = slide.length - 1;
-
-    // Sync image slider
-    slides.style.transform = `translateX(${-currentIndex * 100}%)`;
-
-    // Sync text slider
-    if (tSlider) { // Ensure tSlider exists
-        tSlider.style.transform = `translateX(${-currentIndex * 100}%)`;
+        // Update slider position
+        slides.style.transform = `translateX(${-currentIndex * 100}%)`;
     }
-}
-
 
     next.addEventListener('click', () => {
         currentIndex++;
@@ -173,12 +141,12 @@ function showSlide(index) {
     setInterval(() => {
         currentIndex++;
         showSlide(currentIndex);
-    }, 5000);
+    }, 3500);
 });
 
 </script>
 
-</div>
+
 
     <footer>
         &copy; 2024 DATA SCIENCE. All rights reserved.
