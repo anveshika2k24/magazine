@@ -227,13 +227,6 @@
     object-fit: cover;
 }
 
-        .our-picks {
-            grid-row: 2 / 3; /* Bottom-right section */
-            grid-column: 2 / 3;
-            background-color: #e4e4e4;
-            padding: 20px;
-        }
-
 
         .section-title {
             z-index: 50;
@@ -251,8 +244,7 @@ margin: 5px;
 
 
         /* Synchronize the heights */
-.container > .latest,
-.container > .our-picks {
+.container > .latest{
     display: flex;         /* Use flexbox for alignment */
     flex-direction: column; /* Stack content inside the block */
     height: 100%;           /* Each takes 50% of the featured block height */
