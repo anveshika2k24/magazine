@@ -1,15 +1,19 @@
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr; /* Stack sections on smaller screens */
-    }
-    .featured {
-        grid-row: auto;
-        grid-column: auto;
-    }
+@font-face {
+    font-family: 'CustomFont'; /* Choose a name for your font */
+    src: url('amsterdam-3/Amsterdam.ttf') format('truetype'); /* Path to your font file */
+    font-weight: normal; /* Optional: specify weight */
+    font-style: normal; /* Optional: specify style */
 }
 
+@font-face {
+    font-family: 'CustomFont-2'; /* Choose a name for your font */
+    src: url('le_jour_serif/Le Jour Serif.ttf') format('truetype'); /* Path to your font file */
+    font-weight: normal; /* Optional: specify weight */
+    font-style: normal; /* Optional: specify style */
+}
         body {
             font-family: Arial, sans-serif;
+            height: 100%;
             margin: 0;
             padding: 0;
         }
@@ -22,20 +26,34 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        header .logo {
+/*
+        header .logo{
             padding: 5px 0 10px 0;
-            display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Align items vertically */
+            display: flex; /* Use flexbox for alignment *./
+    align-items: center; /* Align items vertically *./
+    font-family: 'CustomFont';
             font-size: 24px;
             font-weight: bold;
         }
+*/
+
+        header .logo {
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Optional: Ensures horizontal centering */
+    gap: 10px; /* Spacing between the image and text */
+    font-size: 48px;
+    font-weight: bold;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
 
         header .logo img {
     width: 50px;
     height: 50px;
     border: #0024ff 2px solid;
-
+    
     border-radius: 80px;
     margin-right: 10px; /* Space between the logo image and text */
     box-shadow: 
@@ -46,6 +64,30 @@
 }
 
 
+
+        header .logo h6.custom-font{
+    font-family: 'CustomFont'; /* Apply custom font only to "A" */
+        position: absolute;
+        left: 34.5%;
+    padding-top: 4px;
+    font-size: 35px;
+}
+
+header .logo p {
+    position: absolute;
+    left: 40%;
+    font-family: CustomFont-2; /* Default font for other letters */
+}
+
+header .logo p1 {
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    font-size: 12px;
+    font-family: CustomFont-2; /* Default font for other letters */
+    
+    white-space: nowrap; /* Prevent line breaks */
+}
 
         header .social-media ul {
             display: flex;
@@ -65,7 +107,7 @@
         }
 
 
-        header .social-media ul li a{
+        header .social-media ul li a:not(.about){
             display: flex;
             align-items: center;
             justify-content: center;
@@ -76,6 +118,30 @@
             background: #171515;
             border-radius: 50%;
             transform: 0.5s;                        
+        }
+
+        header .social-media .about{
+            color: white;
+            font-size: 13px;
+            padding: 0;
+            margin: 0;
+            transition: 0.5s;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+
+        header .social-media .about:hover{
+         text-shadow: 
+        0 0 20px #0024ff, 
+        0 0 30px #0024ff, 
+        0 0 40px #0024ff, 
+        0 0 50px #0024ff; /* Neon glow effect */
+        color: #0024ff;
+        
+            
+        -webkit-text-stroke: 0px #ffffff; /* White outline */
+
         }
             
         header .social-media ul li a:before {
@@ -90,10 +156,11 @@
             z-index: -1;
             transition: 0.5s;
         }
-            
-        header .social-media ul li:nth-child(1):before { background: #4267b2; }
-        header .social-media ul li:nth-child(2):before { background: #1da1f2; }            
-        header .social-media ul li:nth-child(3):before { background: #e1306c; }
+
+
+        header .social-media ul li:nth-child(2):before { background: #4267b2; }
+        header .social-media ul li:nth-child(3):before { background: #1da1f2; }            
+        header .social-media ul li:nth-child(4):before { background: #e1306c; }
 
 
         header .social-media ul li :hover:before {
@@ -101,23 +168,23 @@
             transform: scale(1.2);
         }
 
-
-        header .social-media ul li:nth-child(1):hover:before { box-shadow: 0 0 15px #316FF6; }
-        header .social-media ul li:nth-child(2):hover:before { box-shadow: 0 0 15px #1da1f2; }
-        header .social-media ul li:nth-child(3):hover:before { box-shadow: 0 0 15px #e1306c; }
+        header .social-media ul li:nth-child(2):hover:before { box-shadow: 0 0 15px #316FF6; }
+        header .social-media ul li:nth-child(3):hover:before { box-shadow: 0 0 15px #1da1f2; }
+        header .social-media ul li:nth-child(4):hover:before { box-shadow: 0 0 15px #e1306c; }
         
 
-        header .social-media ul li:nth-child(1):hover {
+
+        header .social-media ul li:nth-child(2):hover {
             box-shadow: 0 0 20px 10px #316FF6;
             text-shadow: 0 0 20px 10px #4267b2;
         }
 
-        header .social-media ul li:nth-child(2):hover {
+        header .social-media ul li:nth-child(3):hover {
             box-shadow: 0 0 20px 10px #1da1f2;
             text-shadow: 0 0 20px 10px #1da1f2;
         }
 
-        header .social-media ul li:nth-child(3):hover {
+        header .social-media ul li:nth-child(4):hover {
             box-shadow: 0 0 20px 10px #e1306c;
             text-shadow: 0 0 20px 10px #e1306c;
         }
@@ -172,93 +239,13 @@
 
         }
 
-        .container {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: 2fr 1fr;
-            gap: 10px;
-            padding: 20px;
-        }
-
-        .featured {
-    grid-row: 1 / 2; /* Adjust to occupy the intended grid rows */
-    grid-column: 1 / 2; /* Adjust to occupy the intended grid columns */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: #e4e4e; /* Optional background for fallback */
-     position: relative;
-}
-
-.featured-title {
-    position: absolute; /* Allows you to place it anywhere */
-    top: 10px;          /* Adjust the distance from the top */
-    left: 5px;         /* Adjust the distance from the left */
-    color: black;
-    background-color: rgba(0, 0, 0, 0.2); /* Optional background for better visibility */       /* Text color for contrast */
-    border-radius: 5px;
-    padding: 10px;      /* Optional padding for spacing */
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    z-index: 50;        /* Ensures it stays on top of the image */
-}
-
-
-
-
-        .latest {
-            position: relative;
-            margin-top: 20px;
-            grid-row: 1/2; /* Top-right section */
-            grid-column: 2 / 3;
-            background-color: #e4e4e4;
-            padding: 20px;
-        }
-
-        .latest img {
-    height: 100%;
-    width: 200%;
-    object-fit: cover;
-}
-
-
-        .section-title {
-            z-index: 50;
-margin: 5px;
-            position: absolute;
-            font-size: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
-             color: black;
-             padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-        }
-
-
-
-        /* Synchronize the heights */
-.container > .latest{
-    display: flex;         /* Use flexbox for alignment */
-    flex-direction: column; /* Stack content inside the block */
-    height: 100%;           /* Each takes 50% of the featured block height */
-    box-sizing: border-box;
-    gap: 10px;             /* Adjust this gap if required */
-    margin: 5px 0;         /* Add smaller margins to reduce the spacing */
-}
-
-
-        footer {
+footer {
             background-color: black;
             color: white;
             text-align: center;
-            padding: 10px 0; 
-            margin-top: 20px;
-            position: relative;
+            padding: 0px 0; 
+            margin-top: 100px;
+            position: absolute;
+            bottom: -0;
+           margin-top: auto; /* Push footer to the bottom */
         }
