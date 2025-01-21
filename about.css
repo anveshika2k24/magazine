@@ -1,0 +1,27 @@
+body {
+        background: linear-gradient(0deg, #EE9CA7, #FFDDE1);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    /* Default visibility for desktop view */
+    .mob {
+        display: none; /* Hidden by default */
+    }
+
+    /* Hide container image for mobile view */
+    .container img {
+        display: block; /* Visible by default */
+    }
+
+    /* Mobile-specific styles using media query */
+    @media (max-width: 768px) { 
+        .mob {
+            display: block; /* Visible on mobile */
+        }
+
+        .container img {
+            display: none; /* Hidden on mobile */
+        }
+    }

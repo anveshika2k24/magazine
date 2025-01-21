@@ -1,0 +1,376 @@
+@font-face {
+    font-family: 'CustomFont'; /* Choose a name for your font */
+    src: url('amsterdam-3/Amsterdam.ttf') format('truetype'); /* Path to your font file */
+    font-weight: normal; /* Optional: specify weight */
+    font-style: normal; /* Optional: specify style */
+}
+
+@font-face {
+    font-family: 'CustomFont-2'; /* Choose a name for your font */
+    src: url('le_jour_serif/Le Jour Serif.ttf') format('truetype'); /* Path to your font file */
+    font-weight: normal; /* Optional: specify weight */
+    font-style: normal; /* Optional: specify style */
+}
+
+html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+}
+        body {
+            font-family: Arial, sans-serif;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            background:  no-repeat; /* Prevent repeat */
+    background-size: cover; /* Make it cover the whole screen */
+    background-attachment: fixed; /* Keep it fixed on scroll */
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+    display: flex; /* Flexbox for horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Optional: Ensures horizontal centering */
+    gap: 10px; /* Spacing between the image and text */
+    font-size: 48px;
+    font-weight: bold;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
+
+        header .logo img {
+    width: 50px;
+    height: 50px;
+    border: #0024ff 2px solid;
+    
+    border-radius: 80px;
+    margin-right: 10px; /* Space between the logo image and text */
+    box-shadow: 
+        0 0 10px #0024ff, 
+        0 0 20px #0024ff, 
+        0 0 30px #0024ff, 
+        0 0 20px #0024ff; /* Neon glow effect */
+}
+
+        header .logo h6.custom-font{
+    font-family: 'CustomFont'; /* Apply custom font only to "A" */
+        position: absolute;
+        left: 34.5%;
+    padding-top: 4px;
+    font-size: 35px;
+}
+
+header .logo p {
+    position: absolute;
+    left: 40%;
+    font-family: CustomFont-2; /* Default font for other letters */
+}
+
+header .logo p1 {
+    position: absolute;
+    left: 50%;
+    top: 8%;
+    font-size: 12px;
+    font-family: CustomFont-2; /* Default font for other letters */
+    
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+        header .social-media ul {
+            display: flex;
+        }
+
+        header .social-media ul li {
+            position: relative;
+            display: block;
+            font-size: 15px;
+            height: 30px;
+            width: 30px;
+            line-height: 30px;
+            margin: 0 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+
+        header .social-media ul li a:not(.about){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            background: #171515;
+            border-radius: 50%;
+            transform: 0.5s;                        
+        }
+
+        header .social-media .about{
+            color: white;
+            font-size: 13px;
+            padding: 0;
+            margin: 0;
+            transition: 0.3s;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+
+        header .social-media .about:hover {
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent gray background */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5); /* Optional: Adds a shadow for emphasis */
+        }
+
+        header .social-media .active{
+            color: black;
+            background-color: rgba(255, 255, 255, 1); /* Transparent gray background */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5); /* Optional: Adds a shadow for emphasis */
+        }
+
+header .social-media .active:hover{
+            color: black;
+            background-color: rgba(255, 255, 255, 1); /* Transparent gray background */
+            transform: translateY(-7px); /* Moves the link slightly upwards */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5); /* Optional: Adds a shadow for emphasis */
+        }
+            
+        header .social-media ul li a:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            height: inherit;
+            width: inherit;
+            border-radius: 50%;
+            transform: scale(0.9);
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+
+        header .social-media ul li:nth-child(2):before { background: #4267b2; }
+        header .social-media ul li:nth-child(3):before { background: #1da1f2; }            
+        header .social-media ul li:nth-child(4):before { background: #e1306c; }
+
+
+        header .social-media ul li :hover:before {
+            filter: blur(1px);
+            transform: scale(1.2);
+        }
+
+        header .social-media ul li:nth-child(2):hover:before { box-shadow: 0 0 15px #316FF6; }
+        header .social-media ul li:nth-child(3):hover:before { box-shadow: 0 0 15px #1da1f2; }
+        header .social-media ul li:nth-child(4):hover:before { box-shadow: 0 0 15px #e1306c; }
+        
+
+
+        header .social-media ul li:nth-child(2):hover {
+            box-shadow: 0 0 20px 10px #316FF6;
+            text-shadow: 0 0 20px 10px #4267b2;
+        }
+
+        header .social-media ul li:nth-child(3):hover {
+            box-shadow: 0 0 20px 10px #1da1f2;
+            text-shadow: 0 0 20px 10px #1da1f2;
+        }
+
+        header .social-media ul li:nth-child(4):hover {
+            box-shadow: 0 0 20px 10px #e1306c;
+            text-shadow: 0 0 20px 10px #e1306c;
+        }
+
+
+        .fa-facebook-f:hover{ color: #456cba; }
+    
+        .fa-twitter:hover{ color: #26a4f2; }
+    
+        .fa-instagram:hover{ color: #e23670; }
+
+        .options {
+            background-color: black;
+            padding: 12px     0px 10px 0;
+            text-align: center;
+            display: flex; /* Enables flexbox */
+            justify-content: space-between; /* Centers items horizontally */
+            flex-wrap: wrap; /* Ensures items wrap to the next line if necessary */
+            gap: 7px; /* Adds consistent spacing between items */
+            transition: transform 0.3s, box-shadow 0.3s;
+            transition: top 0.3s; /* Smooth animation for stickiness */
+            width: 100%;
+        }
+
+        .options.sticky {
+  position: fixed; /* Stick to the top when scrolled */
+  top: 0;
+}
+
+        .options a {
+            font-size: 12px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            padding: 10px 10px;
+            border-radius: 5px;
+        }
+
+        .options a:hover {
+            color: black;
+            background-color: rgba(255, 255, 255, 0.7); /* Transparent gray background */
+            transform: translateY(-10px); /* Moves the link slightly upwards */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5); /* Optional: Adds a shadow for emphasis */
+        }
+
+        .options .active{
+            color: black;
+            background-color: rgba(255, 255, 255, 1); /* Transparent gray background */
+            transform: translateY(-7px); /* Moves the link slightly upwards */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5); /* Optional: Adds a shadow for emphasis */
+        }
+
+        .options .active:hover{
+            color: black;
+            background-color: rgba(255, 255, 255, 1); /* Transparent gray background */
+            transform: translateY(-7px); /* Moves the link slightly upwards */
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.5); /* Optional: Adds a shadow for emphasis */
+
+        }
+
+footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 0px 0; 
+            margin-top: 100px;
+            position: absolute;
+            bottom: -0;
+           margin-top: auto; /* Push footer to the bottom */
+        }
+
+
+
+
+        /* Style the burger menu */
+.burger-menu {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    gap: .4rem;
+    cursor: pointer;
+    padding: 10px 0 5px 10px;
+    background-color: black;
+}
+
+.burger-menu div {
+    border-radius: 2px;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+
+    transition: 0.3s;
+}
+
+/* Make the burger menu visible on smaller screens */
+@media (max-width: 768px) {
+    header .logo img {
+    width: 30px;
+    height: 30px;
+    border: #0024ff 1px solid;
+    
+    border-radius: 80px;
+     /* Space between the logo image and text */
+    box-shadow: 
+        0 0 10px #0024ff, 
+        0 0 10px #0024ff, 
+        0 0 20px #0024ff, 
+        0 0 30px #0024ff; /* Neon glow effect */
+    }
+
+           header .logo h6.custom-font{
+    font-family: 'CustomFont'; /* Apply custom font only to "A" */
+        position: absolute;
+        left: 10.2rem;
+    
+    font-size: .9rem;
+}
+
+header .logo p {
+    position: absolute;
+    font-family: CustomFont-2; /* Default font for other letters */
+    font-size: .9rem;
+}
+
+header .logo p1 {
+
+    font-family: CustomFont-2; /* Default font for other letters */
+    position: absolute;
+    text-align: center;
+    top: 6%;
+    font-size: 0.55rem;
+    
+ }
+
+        header .social-media ul li {
+            position: relative;
+            display: block;
+            font-size: 7.5px;
+            height: 15px;
+            width: 15px;
+            line-height: 15px;
+            margin: 0 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+
+        header .social-media .about{
+            color: white;
+            font-size: 7.5px;
+            padding: 0;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+
+
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .options {
+        display: none; /* Initially hide options */
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 100px; /* Below the header */
+        left: 0;
+        width: 25%;
+        z-index: 1000;
+    }
+
+    .options a {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+    }
+
+    .options.show {
+        display: flex; /* Show options when menu is active */
+    }
+}
+

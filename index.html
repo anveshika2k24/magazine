@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="slider.css">
+    <style type="text/css">
+        body{
+            background: linear-gradient(0deg, #2E3192, #1BFFFF);
+            background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh; /* Ensures it covers the full viewport height */
+        }
+    </style>
+</head>
+<body>
+
+        <header>
+        <div class="logo"><img src="logo.jpg" alt="Logo">
+            <h6 class="custom-font">A</h6><p>NVESHIKA</p><p1>- BEYOND THE BOUNDARIES</p1>
+            </div>
+
+        <div class="social-media">
+
+            <ul>
+                <li>
+                    <a href="about.html" class="about">About</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/anveshika2k24/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+
+        <div class="burger-menu" id="burgerMenu">
+        <!-- Simple three-line burger icon -->
+        <div></div>
+        <div></div>
+        <div></div>
+        </div>
+
+
+
+    <div class="options" id="mobileMenu">
+        <a href="" class="active">Home</a>
+        <a href="world.html">World</a>
+        <a href="india.html">India</a>
+        <a href="politics.html">Politics</a>
+        <a href="govt.html">Govt</a>
+        <a href="economy.html">Economy</a>
+        <a href="enter.html">Business</a>
+        <a href="tech.html">TechNovations</a>
+        <a href="sports.html">Sports</a>
+        <a href="edu.html">Education</a>
+        <a href="medical.html">Medical</a>
+        <a href="climate.html">Climate</a>
+        <a href="space.html">Astro</a>
+        <a href="crimes.html">Crimes</a>
+        <a href="tribute.html">Tributes</a>
+        <a href="milestones.html">Milestones</a>
+        <a href="highlights.html">Highlights</a>
+    </div>
+
+    <script type="text/javascript">
+        // Get burger menu and options
+const burgerMenu = document.getElementById('burgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+// Add click event listener to burger menu
+burgerMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show'); // Toggle the 'show' class
+});
+
+    </script>
+
+<div class="container">
+
+        <div class="featured">
+            <div class="featured-title">FEATURED</div>
+    <div class="slider">
+
+        <div class="slides">
+            <!-- Slide 1 -->    
+            <div class="slide">
+                <a href="about.html"><img src="cover/1.png" alt="Slide 1"></a>
+            </div>
+
+            <div class="slide">
+                <a href="tribute.html"> <img src="cover/2.png" alt="Slide 2"></a>
+            </div>
+            
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev"></button>
+        <button class="next"></button>
+    </div>    
+</div>
+
+
+            <div class="latest">
+            <div class="section-title">LATEST</div>
+            <div class="slider">
+        <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+                <a href="india.html"><img src="cover/3.jpg" alt="Slide 1"></a>
+                
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <a href="tribute.html"><img src="cover/4.png" alt="Slide 2">
+
+
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <a href="crimes.html"><img src="cover/5.png" alt="Slide 3"></a>
+            </div>
+            </div>
+        <!-- Navigation Buttons -->
+        <button class="prev"></button>
+        <button class="next"></button>
+    </div>
+
+        </div>
+
+</div>
+
+<script type="text/javascript">
+document.querySelectorAll('.slider').forEach(section => {
+    const slides = section.querySelector('.slides');
+    const slide = section.querySelectorAll('.slide');
+    const prev = section.querySelector('.prev');
+    const next = section.querySelector('.next');
+
+    let currentIndex = 0;
+
+    // Clone the first slide and append it to the end
+    const firstSlideClone = slide[0].cloneNode(true);
+    slides.appendChild(firstSlideClone);
+
+    const totalSlides = slide.length + 1; // Includes the cloned slide
+
+    function showSlide(index) {
+        slides.style.transition = 'transform 1s ease-in-out';
+        slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    function handleInfiniteScroll() {
+        if (currentIndex >= totalSlides - 1) {
+            slides.style.transition = 'none'; // Remove transition for seamless looping
+            currentIndex = 0; // Reset to the original first slide
+            slides.style.transform = `translateX(0)`;
+        }
+    }
+
+    next.addEventListener('click', () => {
+        currentIndex++;
+        showSlide(currentIndex);
+        if (currentIndex === totalSlides - 1) {
+            setTimeout(handleInfiniteScroll, 1000); // Allow time for transition
+        }
+    });
+
+    prev.addEventListener('click', () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+            slides.style.transition = 'none'; // Remove transition for seamless looping
+            currentIndex = totalSlides - 2; // Jump to the last real slide
+            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+            setTimeout(() => {
+                slides.style.transition = 'transform 1s ease-in-out';
+            }, 50); // Re-enable transition after repositioning
+        }
+        showSlide(currentIndex);
+    });
+
+    setInterval(() => {
+        currentIndex++;
+        showSlide(currentIndex);
+        if (currentIndex === totalSlides - 1) {
+            setTimeout(handleInfiniteScroll, 1000); // Allow time for transition
+        }
+    }, 3500);
+});
+
+</script>
+</body>
+</html>
