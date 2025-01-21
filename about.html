@@ -59,7 +59,7 @@
         <div></div>
         </div>
 
-    <div class="options">
+    <div class="options" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="world.html">World</a>
         <a href="india.html">India</a>
@@ -78,6 +78,20 @@
         <a href="milestones.html">Milestones</a>
         <a href="highlights.html">Highlights</a>
     </div>
+
+
+    <script type="text/javascript">
+        // Get burger menu and options
+const burgerMenu = document.getElementById('burgerMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+
+// Add click event listener to burger menu
+burgerMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show'); // Toggle the 'show' class
+});
+
+    </script>
+    
 <div class="container">
     <img src="about\preface.png">
 </div>
