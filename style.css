@@ -284,7 +284,7 @@ footer {
 }
 
 /* Make the burger menu visible on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 320px) {
     header .logo img {
     width: 30px;
     height: 30px;
